@@ -1,0 +1,376 @@
+/**
+ * Aegis AI Healthcare System - Frontend Styling
+ * ECA Project for MIT Undergraduate Application
+ * Created by: [Your Name]
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #0a192f 0%, #1a365d 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.mit-badge {
+    margin-bottom: 15px;
+}
+
+.mit-logo {
+    display: inline-block;
+    background: #ff6b35;
+    color: white;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.mit-lab {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #ff6b35, #ffb347);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.eca-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 20px;
+    border-radius: 30px;
+    margin: 15px 0;
+    font-size: 0.9rem;
+}
+
+.creator-info {
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.creator-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-card h3 {
+    color: #1a365d;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6b35;
+}
+
+.stat-card small {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.about-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.about-section h3 {
+    color: #1a365d;
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.skills span {
+    background: linear-gradient(135deg, #ff6b35, #ffb347);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.section-title {
+    color: white;
+    margin: 30px 0 20px 0;
+    text-align: center;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #ff6b35;
+    color: white;
+}
+
+.btn-secondary {
+    background: #2c5282;
+    color: white;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.patient-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.patient-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.patient-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.patient-card h3 {
+    color: #1a365d;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+.patient-card p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.risk-low {
+    color: #28a745;
+    font-weight: bold;
+    background: #d4edda;
+    padding: 2px 8px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.risk-medium {
+    color: #ffc107;
+    font-weight: bold;
+    background: #fff3cd;
+    padding: 2px 8px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.risk-high {
+    color: #dc3545;
+    font-weight: bold;
+    background: #f8d7da;
+    padding: 2px 8px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.card-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit, .btn-delete, .btn-alert {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-edit {
+    background: #ffc107;
+    color: #333;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-alert {
+    background: #17a2b8;
+    color: white;
+}
+
+.form-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.form-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.form-content h3 {
+    color: #1a365d;
+    margin-bottom: 20px;
+}
+
+.form-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-content button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-content button:first-of-type {
+    background: #ff6b35;
+    color: white;
+}
+
+.loading {
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    grid-column: 1 / -1;
+}
+
+.alert-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #dc3545;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 50%;
+    font-size: 12px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+footer {
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+@media (max-width: 768px) {
+    .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .patient-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
