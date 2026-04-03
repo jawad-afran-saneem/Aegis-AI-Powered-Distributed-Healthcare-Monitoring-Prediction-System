@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis AI | ECA Project for MIT Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="mit-badge">
+                <span class="mit-logo">⚡ AEGIS AI</span>
+                <span class="mit-lab">Healthcare Monitoring System</span>
+            </div>
+            <h1>🛡️ AI-Powered Distributed Healthcare System</h1>
+            <p class="subtitle">An Extracurricular Project for MIT Undergraduate Application</p>
+            <div class="eca-badge">
+                🎯 ECA Showcase: AI | Healthcare | Distributed Systems | Full-Stack Development
+            </div>
+            <div class="creator-info">
+                <p>👨‍💻 Created by: [Your Full Name]</p>
+                <p>📧 Email: [your.email@example.com]</p>
+                <p>🎓 Applying to: MIT Class of 2029 | Course 6-2 (EECS)</p>
+            </div>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat-card">
+                <h3>📊 MIT Faculty</h3>
+                <p id="totalPatients">0</p>
+                <small>Under Monitoring</small>
+            </div>
+            <div class="stat-card">
+                <h3>⚠️ High Risk</h3>
+                <p id="highRisk">0</p>
+                <small>Need Attention</small>
+            </div>
+            <div class="stat-card">
+                <h3>🔔 Active Alerts</h3>
+                <p id="alertCount">0</p>
+                <small>System Generated</small>
+            </div>
+            <div class="stat-card">
+                <h3>🟢 System Status</h3>
+                <p id="systemStatus">✅ Online</p>
+                <small>24/7 Monitoring</small>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h3>📌 About This Project</h3>
+            <p>This is my ECA (Extracurricular Activity) project demonstrating my passion for <strong>Artificial Intelligence, Healthcare Technology, and Full-Stack Development</strong>. 
+            The system monitors vital signs of MIT professors (as example patients) and predicts health risks using AI algorithms. 
+            This project showcases my skills in <strong>Node.js, Express, HTML/CSS/JS, REST APIs, and Machine Learning concepts</strong>.</p>
+            <div class="skills">
+                <span>🔬 AI/ML</span>
+                <span>💻 Full-Stack</span>
+                <span>🏥 Healthcare Tech</span>
+                <span>📊 Data Analysis</span>
+                <span>☁️ Cloud Computing</span>
+                <span>🔗 REST APIs</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button onclick="showAddPatientForm()" class="btn-primary">➕ Add New Patient</button>
+            <button onclick="refreshData()" class="btn-secondary">🔄 Refresh Dashboard</button>
+        </div>
+
+        <div id="addForm" class="form-modal" style="display:none">
+            <div class="form-content">
+                <h3>Add New Patient Record</h3>
+                <input type="text" id="name" placeholder="Full Name (e.g., Prof. Name)" required>
+                <input type="number" id="age" placeholder="Age" required>
+                <input type="text" id="bp" placeholder="Blood Pressure (e.g., 120/80)">
+                <input type="number" id="heartRate" placeholder="Heart Rate (bpm)">
+                <button onclick="addPatient()">Submit Record</button>
+                <button onclick="hideForm()">Cancel</button>
+            </div>
+        </div>
+
+        <h2 class="section-title">📋 MIT Faculty Health Monitoring Dashboard</h2>
+        <div class="patient-grid" id="patientGrid">
+            <div class="loading">Loading faculty data...</div>
+        </div>
+
+        <footer>
+            <p>🏛️ This project is part of my MIT Undergraduate Application Portfolio</p>
+            <p>🔬 Skills Demonstrated: Node.js, Express, REST APIs, HTML5, CSS3, JavaScript, AI Algorithms</p>
+            <p>📅 Project Completed: [Current Date]</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
