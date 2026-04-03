@@ -1,0 +1,224 @@
+[2:25 AM, 4/3/2026] Sa: /**
+ * Aegis AI Healthcare System - Backend API
+ * Created by: Jawad Afran Saneem
+ * Email: saneem.eecs.31@gmail.com
+ * Purpose: ECA Project for MIT Undergraduate Application
+ */
+
+const express = require('express');
+const cors = require('cors');
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+app.use(cors());
+app.use(express.json());
+
+// Patient Database - MIT Professors
+let patients = [
+    { id: 1, name: "Prof. John Guttag", age: 74, bp: "125/82", heartRate: 70, temperature: 98.4, risk: "Low", department: "CSAIL" },
+    { id: 2, name: "Prof. David Sontag", age: 48, bp: "118/78", heartRate: 68, temperature: 98.2, risk: "Low", department: "EECS" },
+    { id: 3, name: "Prof. Regina Barzilay", age: 53, bp: "122/80", heartRate: 72, temperature: 98.6, risk: "Low", department: "AI for Healthcare" },
+    { id: 4, name: "Prof. Peter Szolovits", age: 76, bp: "135/85", heartRate: 78, temperature: 98.8, risk: "Medium", department: "Clinical Decision Making" },
+    { id: 5, name: "Dean Stu Schmill", age: 60, bp: "130/84", heartRate: 75, temperature: 98.7, risk: "Medium", department: "MIT Admissions" }
+];
+
+let alerts = [];
+
+// Risk Calculator
+function calculateRisk(patient) {
+    let score = 0;
+    if (patient.age > 70) score += 2;
+    else if (patient.age > 60) score += 1;
+    
+    const [systolic] = patient.bp.split('/').map(Number);
+    if (systolic > 140) score += 2;
+    else if (systolic > 130) score += 1;
+    
+    if (patient.heartRate > 90) score += 1;
+    if (patient.temperature > 99.5) score += 1;
+    
+    if (score >= 4) return "High";
+    if (score >= 2) return "Medium";
+    return "Low";
+}
+
+// API Endpoints
+app.get('/health', (req, res) => {
+    res.json({ 
+        status: 'OK', 
+        message: 'Aegis AI Healthcare System Running',
+        createdBy: 'Jawad Afran Saneem',
+        email: 'saneem.eecs.31@gmail.com'
+    });
+});
+
+app.get('/patients', (req, res) => {
+    res.json(patients);
+});
+
+app.get('/patients/:id', (req, res) => {
+    const patient = patients.find(p => p.id === parseInt(req.params.id));
+    patient ? res.json(patient) : res.status(404).json({ error: 'Patient not found' });
+});
+
+app.post('/patients', (req, res) => {
+    const newPatient = { id: patients.length + 1, ...req.body, risk: calculateRisk(req.body) };
+    patients.push(newPatient);
+    res.status(201).json(newPatient);
+});
+
+app.put('/patients/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const index = patients.findIndex(p => p.id === id);
+    if (index !== -1) {
+        patients[index] = { ...patients[index], ...req.body, risk: calculateRisk({ ...patients[index], ...req.body }) };
+        res.json(patients[index]);
+    } else {
+        res.status(404).json({ error: 'Patient not found' });
+    }
+});
+
+app.delete('/patients/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    patients = patients.filter(p => p.id !== id);
+    res.json({ message: 'Patient deleted' });
+});
+
+app.post('/patients/:id/alerts', (req, res) => {
+    const patient = patients.find(p => p.id === parseInt(req.params.id));
+    if (patient && patient.risk === 'High') {
+        const alert = { id: alerts.length + 1, patientId: patient.id, message: ${patient.name} needs attention!, time: new Date() };
+        alerts.push(alert);
+        res.json(alert);
+    } else {
+        res.json({ message: 'No alert needed' });
+    }
+});
+
+app.get('/alerts', (req, res) => {
+    res.json(alerts);
+});
+
+app.listen(PORT, () => {
+    console.log(\n========================================);
+    console.log(🛡️ AEGIS AI HEALTHCARE SYSTEM);
+    console.log(========================================);
+    console.log(🚀 Server running on http://localhost:${PORT});
+    console.log(👨‍💻 Created by: Jawad Afran Saneem);
+    console.log(📧 Email: saneem.eecs.31@gmail.com);
+    console.log(========================================\n);
+});
+
+module.exports = app;
+[2:33 AM, 4/3/2026] Sa: /**
+ * Aegis AI Healthcare System - Backend API
+ * Created by: Jawad Afran Saneem
+ * Email: saneem.eecs.31@gmail.com
+ * Purpose: ECA Project for MIT Undergraduate Application
+ */
+
+const express = require('express');
+const cors = require('cors');
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+app.use(cors());
+app.use(express.json());
+
+// Patient Database - MIT Professors
+let patients = [
+    { id: 1, name: "Prof. John Guttag", age: 74, bp: "125/82", heartRate: 70, temperature: 98.4, risk: "Low", department: "CSAIL" },
+    { id: 2, name: "Prof. David Sontag", age: 48, bp: "118/78", heartRate: 68, temperature: 98.2, risk: "Low", department: "EECS" },
+    { id: 3, name: "Prof. Regina Barzilay", age: 53, bp: "122/80", heartRate: 72, temperature: 98.6, risk: "Low", department: "AI for Healthcare" },
+    { id: 4, name: "Prof. Peter Szolovits", age: 76, bp: "135/85", heartRate: 78, temperature: 98.8, risk: "Medium", department: "Clinical Decision Making" },
+    { id: 5, name: "Dean Stu Schmill", age: 60, bp: "130/84", heartRate: 75, temperature: 98.7, risk: "Medium", department: "MIT Admissions" }
+];
+
+let alerts = [];
+
+// Risk Calculator
+function calculateRisk(patient) {
+    let score = 0;
+    if (patient.age > 70) score += 2;
+    else if (patient.age > 60) score += 1;
+    
+    const [systolic] = patient.bp.split('/').map(Number);
+    if (systolic > 140) score += 2;
+    else if (systolic > 130) score += 1;
+    
+    if (patient.heartRate > 90) score += 1;
+    if (patient.temperature > 99.5) score += 1;
+    
+    if (score >= 4) return "High";
+    if (score >= 2) return "Medium";
+    return "Low";
+}
+
+// API Endpoints
+app.get('/health', (req, res) => {
+    res.json({ 
+        status: 'OK', 
+        message: 'Aegis AI Healthcare System Running',
+        createdBy: 'Jawad Afran Saneem',
+        email: 'saneem.eecs.31@gmail.com'
+    });
+});
+
+app.get('/patients', (req, res) => {
+    res.json(patients);
+});
+
+app.get('/patients/:id', (req, res) => {
+    const patient = patients.find(p => p.id === parseInt(req.params.id));
+    patient ? res.json(patient) : res.status(404).json({ error: 'Patient not found' });
+});
+
+app.post('/patients', (req, res) => {
+    const newPatient = { id: patients.length + 1, ...req.body, risk: calculateRisk(req.body) };
+    patients.push(newPatient);
+    res.status(201).json(newPatient);
+});
+
+app.put('/patients/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const index = patients.findIndex(p => p.id === id);
+    if (index !== -1) {
+        patients[index] = { ...patients[index], ...req.body, risk: calculateRisk({ ...patients[index], ...req.body }) };
+        res.json(patients[index]);
+    } else {
+        res.status(404).json({ error: 'Patient not found' });
+    }
+});
+
+app.delete('/patients/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    patients = patients.filter(p => p.id !== id);
+    res.json({ message: 'Patient deleted' });
+});
+
+app.post('/patients/:id/alerts', (req, res) => {
+    const patient = patients.find(p => p.id === parseInt(req.params.id));
+    if (patient && patient.risk === 'High') {
+        const alert = { id: alerts.length + 1, patientId: patient.id, message: ${patient.name} needs attention!, time: new Date() };
+        alerts.push(alert);
+        res.json(alert);
+    } else {
+        res.json({ message: 'No alert needed' });
+    }
+});
+
+app.get('/alerts', (req, res) => {
+    res.json(alerts);
+});
+
+app.listen(PORT, () => {
+    console.log(\n========================================);
+    console.log(🛡️ AEGIS AI HEALTHCARE SYSTEM);
+    console.log(========================================);
+    console.log(🚀 Server running on http://localhost:${PORT});
+    console.log(👨‍💻 Created by: Jawad Afran Saneem);
+    console.log(📧 Email: saneem.eecs.31@gmail.com);
+    console.log(========================================\n);
+});
+
+module.exports = app;
