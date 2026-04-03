@@ -4,9 +4,7 @@ Aegis is an AI-powered distributed healthcare monitoring system that processes r
 
 ## 📌 ECA Project for MIT Undergraduate Application
 
-*Created by:* [Your Full Name]  
-*Applying to:* MIT Class of 2029 | Course 6-2 (Electrical Engineering and Computer Science)  
-*Project Type:* Extracurricular Activity (ECA) Portfolio
+*Created by:* JAWAD A. 
 
 ---
 
