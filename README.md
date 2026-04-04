@@ -1,6 +1,6 @@
 # Aegis-AI-Powered-Distributed-Healthcare-Monitoring-Prediction-System
 Aegis is an AI-powered distributed healthcare monitoring system that processes real-time patient data to predict health risks. Built with cloud-native microservices, it ensures scalability, fault tolerance, and secure data flow while providing a smart dashboard for real-time insights and early medical alerts.
-# 🛡️ Aegis AI-Powered Healthcare Monitoring System
+#  Aegis AI-Powered Healthcare Monitoring System
 
 
 
@@ -8,7 +8,7 @@ Aegis is an AI-powered distributed healthcare monitoring system that processes r
 
 ---
 
-## 🎯 Project Overview
+##  Project Overview
 
 This is my ECA project demonstrating my passion for *Artificial Intelligence, Healthcare Technology, and Full-Stack Development*. The system monitors vital signs of patients (named after MIT professors and admission committee members as a sign of my genuine interest in MIT) and predicts health risks using AI algorithms.
 
@@ -21,7 +21,7 @@ This is my ECA project demonstrating my passion for *Artificial Intelligence, He
 
 ---
 
-## 🚀 Technologies Used
+## Technologies Used
 
 | Category | Technologies |
 |----------|--------------|
@@ -44,7 +44,7 @@ This is my ECA project demonstrating my passion for *Artificial Intelligence, He
 
 ---
 
-## 🏥 Sample Patients (MIT Professors)
+## Sample Patients (MIT Professors)
 
 | Name | Department | Role |
 |------|------------|------|
@@ -55,7 +55,7 @@ This is my ECA project demonstrating my passion for *Artificial Intelligence, He
 
 ---
 
-## 🔧 Installation & Running
+## Installation & Running
 
 ### Prerequisites
 - Node.js installed on your computer
